@@ -10,7 +10,7 @@ p {
 }
 
 body {
-  background-color: transparent; /* Dark Colour */
+  background-color: transparent;
   color: white;
 }
 
@@ -69,7 +69,7 @@ body {
   Header & Logo
 --------------------------------------*/
 header {
-  background-color: grey; /* Dark Colour */
+  background-color: #6F7378;
   color: white;
   font-family: 'Poppins', sans-serif;
 }
@@ -84,7 +84,7 @@ header img {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: grey; /* Adjust based on your theme */
+  background-color: #6F7378; /* Adjust based on your theme */
   position: relative;
 }
 
@@ -323,7 +323,7 @@ label {
 footer {
   font-family: serif;
   background-color: transparent;
-  color: grey;
+  color: #6F7378;
   padding: 10px;
   text-align: center;
   clear: both;
@@ -439,7 +439,7 @@ footer {
     justify-content:left;
     align-items: center;
     padding: 10px 10px;
-    background-color: grey;
+    background-color: #6F7378;
     position: relative;
 }
 
@@ -467,7 +467,7 @@ footer {
     box-shadow: 0 0 0 0.1vw black; /* White shadow as second border */
     cursor: pointer;
     outline: none;
-    background-color: darkslategrey;
+    background-color: #6F7378;
 }
 
 .top img {
