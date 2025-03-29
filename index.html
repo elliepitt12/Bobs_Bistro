@@ -1,0 +1,282 @@
+<!-- saved from url=(0107)file://students.uce.ac.uk/filespace/mb20/tic/S22155702/Year%201%20Website%20DIG4166-A-S1/Website/Index.html -->
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./styles/Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&family=Open+Sans:wght@400;600&family=Roboto:wght@400;600&family=Lato:wght@400;600&family=Playfair+Display:wght@400;600&family=Merriweather:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Logo Section -->
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="./index.html">
+        <img src="./images/logo_Black.png" alt="Website logo">
+      </a>
+    </div>
+
+      <!-- Color Picker Section -->
+      <div class="color-picker-container desktop-only">
+        <h3> Primary Theme Colour: </h3>
+        <input type="color" id="colorPicker">
+    
+        <h3> Secondary Theme Colour: </h3>
+        <input type="color" id="navFooterColorPicker">
+    </div>
+    
+    <!-- Mobile Color Pickers (Visible only on Mobile) -->
+    <div class="mobile-header-color-pickers">
+       <h3> Pick colours:</h3>
+        <input type="color" id="mobileColorPicker">
+        <input type="color" id="mobileNavFooterColorPicker">
+    </div>
+    </div>
+
+    <!-- Collapsible Navigation Menu -->
+    <nav class="nav1 desktop-nav">
+      <ul>
+          <li><a href="./index.html">Menu</a></li>
+          <li><a href="./index.html">About Us</a></li>
+          <li><a href="./index.html">Contact</a></li>
+          <li><a href="./index.html">Gallery</a></li>
+      </ul>
+  </nav>
+  
+  <!-- Mobile Hamburger Menu (Visible only on Mobile) -->
+  <div class="mobile-nav">
+      <input type="checkbox" id="menu">
+      <label for="menu"></label>
+      <nav class="nav1">
+          <ul>
+              <li><a href="./index.html">Menu</a></li>
+              <li><a href="./index.html">About Us</a></li>
+              <li><a href="./index.html">Contact</a></li>
+              <li><a href="./index.html">Gallery</a></li>
+          </ul>
+      </nav>
+  </div>
+
+    <!-- Main Section -->
+    <section>
+      <!-- Banner / Slideshow -->
+      <header class="banner">
+        <div class="banner container">
+          <div class="slide fade">
+            <img src="./images/banner1.png" alt="Image 1">
+          </div>
+          <div class="slide fade">
+            <img src="./images/banner2.png" alt="Image 2">
+          </div>
+          <div class="slide fade">
+            <img src="./images/banner3.png" alt="Image 3">
+          </div>
+          <div class="slide fade">
+            <img src="./images/banner4.png" alt="Image 4">
+          </div>
+          <div class="dots">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+          <!-- Navigation Buttons -->
+          <a class="prev" onclick="changeSlide(-1)">❮</a>
+          <a class="next" onclick="changeSlide(1)">❯</a>
+        </div>
+        <script>
+          let slideIndex = 0;
+          let slideInterval;
+          
+          function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+              slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            updateDots();
+            slideInterval = setTimeout(showSlides, 7000);
+          }
+          
+          function changeSlide(n) {
+            clearTimeout(slideInterval);
+            let slides = document.getElementsByClassName("slide");
+            slideIndex += n;
+            if (slideIndex > slides.length) {
+              slideIndex = 1;
+            }
+            if (slideIndex < 1) {
+              slideIndex = slides.length;
+            }
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+            updateDots();
+            slideInterval = setTimeout(showSlides, 7000);
+          }
+          
+          function currentSlide(n) {
+            clearTimeout(slideInterval);
+            slideIndex = n + 1;
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+            updateDots();
+            slideInterval = setTimeout(showSlides, 7000);
+          }
+          
+          function updateDots() {
+            let dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < dots.length; i++) {
+              dots[i].classList.remove("active");
+            }
+            dots[slideIndex - 1].classList.add("active");
+          }
+          
+          document.addEventListener("DOMContentLoaded", () => {
+            showSlides();
+          });
+        </script>
+      </header>
+
+      <!-- Content Section -->
+      <div class="top">
+        <div class="text-content">
+          <h1>Welcome to Bob's Bistro!</h1>
+          <h2>
+            Here at Bob's Bistro there is more than just meals being made. We create unforgettable experiences around our tables. Taste our crafted menu full of fresh ingredients sourced locally, with flavors that have been brought together from various cuisines around the world. 
+            <p> </p>  
+            Whether you have stopped by for a casual lunch, a romantic dinner, or celebrating anything with your family, we truly feel honored that you are with us. Come in, sit back, and relax with truely special food at low prices!
+          </h2>
+        </div>
+        <img src="./images/restaurant2.png" alt="Restaurant Image">
+      </div>
+
+      <!-- Specials Section -->
+      <div class="special">
+        <h1> Specials </h1>
+      </div>
+      <div class="special1">
+        <img src="./images/special1.png" alt="Restaurant Image" class="hover-img" data-hover="./images/special1 writing.png">
+        <img src="./images/special2.png" alt="Restaurant Image" class="hover-img" data-hover="./images/special2 writing.png">
+        <img src="./images/special3.png" alt="Restaurant Image" class="hover-img" data-hover="./images/special3 writing.png">
+      </div>
+    </section>
+
+    <!-- Hover Effect Script -->
+    <script>
+      document.querySelectorAll('.hover-img').forEach(img => {
+        const originalSrc = img.src;
+        const hoverSrc = img.getAttribute('data-hover');
+        img.addEventListener('mouseenter', () => {
+          img.style.opacity = "0.9"; // Fade out
+          setTimeout(() => {
+            img.src = hoverSrc;
+            img.style.opacity = "1"; // Fade in
+          }, 150);
+        });
+        img.addEventListener('mouseleave', () => {
+          img.style.opacity = "0.9"; // Fade out
+          setTimeout(() => {
+            img.src = originalSrc;
+            img.style.opacity = "1"; // Fade in
+          }, 400);
+        });
+      });
+    </script>
+
+    <!-- Background Color Change -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const colorPicker = document.getElementById("colorPicker"); 
+          const mobileColorPicker = document.getElementById("mobileColorPicker");
+          const navFooterColorPicker = document.getElementById("navFooterColorPicker");
+          const mobileNavFooterColorPicker = document.getElementById("mobileNavFooterColorPicker");
+          const mobileNav = document.getElementById("mobileNav"); // Mobile nav element
+      
+          function setTopAndMiddleBackground(color) {
+              document.querySelector(".header-container").style.backgroundColor = color;
+              document.querySelector("section").style.backgroundColor = color;
+              localStorage.setItem("topMiddleBgColor", color);
+          }
+      
+          function setNavFooterColor(color) {
+            document.querySelector("nav").style.backgroundColor = color;
+            document.querySelector("footer").style.backgroundColor = color;
+
+    // Change mobile nav & hamburger menu background in mobile view
+            if (window.innerWidth <= 768) {
+            document.querySelector(".mobile-nav").style.backgroundColor = color; 
+             document.querySelector(".nav1").style.backgroundColor = color; // Ensure dropdown updates
+             }
+
+    localStorage.setItem("navFooterColor", color);
+}
+      
+          function syncPickers(mainPicker, mobilePicker, callback) {
+              if (mainPicker && mobilePicker) {
+                  mainPicker.addEventListener("input", function () {
+                      callback(mainPicker.value);
+                      mobilePicker.value = mainPicker.value;
+                  });
+      
+                  mobilePicker.addEventListener("input", function () {
+                      callback(mobilePicker.value);
+                      mainPicker.value = mobilePicker.value;
+                  });
+              }
+          }
+      
+          // Load saved colors
+          const savedTopMiddleBgColor = localStorage.getItem("topMiddleBgColor");
+          if (savedTopMiddleBgColor) {
+              setTopAndMiddleBackground(savedTopMiddleBgColor);
+              colorPicker.value = savedTopMiddleBgColor;
+              mobileColorPicker.value = savedTopMiddleBgColor;
+          }
+      
+          const savedNavFooterColor = localStorage.getItem("navFooterColor");
+          if (savedNavFooterColor) {
+              setNavFooterColor(savedNavFooterColor);
+              navFooterColorPicker.value = savedNavFooterColor;
+              mobileNavFooterColorPicker.value = savedNavFooterColor;
+          }
+      
+          syncPickers(colorPicker, mobileColorPicker, setTopAndMiddleBackground);
+          syncPickers(navFooterColorPicker, mobileNavFooterColorPicker, setNavFooterColor);
+      });
+      </script>
+      
+      
+      
+      
+      
+
+      
+
+    <!-- Footer -->
+    <footer>
+      <div class="Social">
+        <a href="https://www.facebook.com"><img src="./images/facebook1.png" alt="Facebook logo"></a>
+        <a href="https://www.twitter.com"><img src="./images/twitter1.png" alt="Twitter logo"></a>
+        <a href="https://www.instagram.com"><img src="./images/instagram1.png" alt="Instagram logo"></a>
+        <a href="https://www.youtube.com"><img src="./images/youtube1.png" alt="Youtube logo"></a>
+      </div>
+      <div class="Copyright">
+        Privacy Policy
+      </div>
+      <div class="Copyright2">
+        ©Bob's Bistro Information Copyright 2025
+      </div>
+    </footer>
+  </body>
+</html>
