@@ -10,7 +10,7 @@ p {
 }
 
 body {
-  background-color: transparent;
+  background-color: #802424;
   color: white;
 }
 
@@ -69,7 +69,7 @@ body {
   Header & Logo
 --------------------------------------*/
 header {
-  background-color: #6F7378;
+  background-color: #802424;
   color: white;
   font-family: 'Poppins', sans-serif;
 }
@@ -84,7 +84,7 @@ header img {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #6F7378; /* Adjust based on your theme */
+  background-color: #802424; /* Adjust based on your theme */
   position: relative;
 }
 
@@ -223,7 +223,7 @@ p {
   Navigation Menu (Desktop)
 --------------------------------------*/
 nav.nav1 {
-  background-color: transparent;
+  background-color: #AD3030;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 200%;
@@ -322,7 +322,7 @@ label {
 --------------------------------------*/
 footer {
   font-family: serif;
-  background-color: transparent;
+  background-color: #AD3030; 
   color: white;
   padding: 10px;
   text-align: center;
@@ -369,6 +369,7 @@ footer {
     margin: 0;
     display: none;
     flex-direction: column;
+    background-color: #AD3030;
     width: 100%;
     text-align: center;
   }
@@ -387,7 +388,8 @@ footer {
     height: auto;
     position: relative;
     z-index: 9998;
-    background-color: inherit;
+    background-color: #AD3030;
+  
   }
   
   #menu:checked ~ nav ul {
@@ -439,7 +441,7 @@ footer {
     justify-content:left;
     align-items: center;
     padding: 10px 10px;
-    background-color: #6F7378;
+    background-color: #802424;
     position: relative;
 }
 
