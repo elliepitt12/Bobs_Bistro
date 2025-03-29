@@ -463,8 +463,8 @@ footer {
 .mobile-header-color-pickers input {
     width: 35px;
     height: 35px;
-    border: 0.2px solid white; 
-    box-shadow: 0 0 0 0.1px black; /* White shadow as second border */
+    border: 0.2vw solid white; 
+    box-shadow: 0 0 0 0.1vw black; /* White shadow as second border */
     cursor: pointer;
     outline: none;
     background-color: white;
@@ -474,8 +474,8 @@ footer {
   width: 90%;
   max-width: 300px;
   margin: 10px 0;
-  height: 200px;
-  max-height: 40%;
+  height: 200vw;
+  max-height: 40vw;
 }
 
 /* Ensure color pickers only appear on mobile */
