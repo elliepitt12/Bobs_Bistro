@@ -446,6 +446,7 @@ footer {
 
 .mobile-header-color-pickers {
   display: flex; /* Use flexbox to align items */
+  flex-direction: column; /* Stack items (text and color pickers) vertically */
   align-items: center; /* Align items vertically in the center */
   justify-content: flex-start; /* Align items to the left */
   gap: 10px;
@@ -465,7 +466,7 @@ footer {
     border: none;
     cursor: pointer;
     outline: none;
-    background-color: transparent;
+    background-color: black;
 }
 
 /* Ensure color pickers only appear on mobile */
@@ -526,7 +527,7 @@ footer {
     display: inline-block;
     height: 25px;
     width: 25px;
-    margin: 0 12px;
+    margin: 0 5px;
     transition: background-color 0.3s ease;
   }
   
@@ -550,8 +551,8 @@ footer {
   }
   
   .top img {
-    max-width: 70%;
-    height: auto;
+    max-width: 90%;
+    max-height: 100%;
   }
   
   .special1 {
