@@ -463,7 +463,7 @@ footer {
 .mobile-header-color-pickers input {
     width: 35px;
     height: 35px;
-    border: none;
+    border: white;
     cursor: pointer;
     outline: none;
     background-color: black;
@@ -480,7 +480,7 @@ footer {
   .banner {
     width: 100%;
     position: relative;
-    height: 300px;
+    height: 250px;
     overflow: hidden;
     margin: 0 auto;
   }
@@ -552,7 +552,7 @@ footer {
   
   .top img {
     max-width: 90%;
-    max-height: 100%;
+    max-height: 50%;
   }
   
   .special1 {
