@@ -439,7 +439,7 @@ footer {
     justify-content:left;
     align-items: center;
     padding: 10px 10px;
-    background-color: #1B365D; /* Dark Colour */
+    background-color: white; /* Dark Colour */
     position: relative;
 }
 
@@ -463,17 +463,17 @@ footer {
 .mobile-header-color-pickers input {
     width: 35px;
     height: 35px;
-    border: 3px solid black; 
+    border: 10px solid black; 
     box-shadow: 0 0 0 5px white; /* White shadow as second border */
     cursor: pointer;
     outline: none;
-    background-color: transparent;
+    background-color: white;
 }
 
 .top img {
   max-width: 90%;
-  height: 300px;
-  max-height: 50%;
+  height: 100px;
+  max-height: 10%;
 }
 
 /* Ensure color pickers only appear on mobile */
