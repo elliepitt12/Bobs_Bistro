@@ -10,7 +10,7 @@ p {
 }
 
 body {
-  background-color: #1B365D; /* Dark Colour */
+  background-color: transparent; /* Dark Colour */
   color: white;
 }
 
@@ -223,7 +223,7 @@ p {
   Navigation Menu (Desktop)
 --------------------------------------*/
 nav.nav1 {
-  background-color: #2C5F8C; /* Light Colour */
+  background-color: transparent;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 200%;
@@ -322,7 +322,7 @@ label {
 --------------------------------------*/
 footer {
   font-family: serif;
-  background-color: #2C5F8C; /* Light Colour */
+  background-color: transparent;
   color: white;
   padding: 10px;
   text-align: center;
