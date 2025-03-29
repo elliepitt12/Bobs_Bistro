@@ -322,16 +322,13 @@ label {
 --------------------------------------*/
 footer {
   font-family: serif;
-  background-color: transparent;
+  background-color: #AD3030;
   color: white;
   padding: 10px;
   text-align: center;
   clear: both;
 }
 
-.footer-container {
-  background-color: #AD3030;
-}
 
 .Copyright2 {
   padding-bottom: 10px;
