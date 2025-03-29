@@ -343,7 +343,7 @@ footer {
 /*--------------------------------------
   Mobile Homepage Overrides
 --------------------------------------*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 700px) {
 
   /* Logo */
   nav.nav1 ul li.logo {
@@ -445,16 +445,17 @@ footer {
 
 
 .mobile-header-color-pickers {
-  display: contents;
-  align-items: center;
-  gap: 20px; 
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Align items vertically in the center */
+  justify-content: flex-start; /* Align items to the left */
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .mobile-header-color-pickers h3 {
   white-space: nowrap; /* Keep text in one line */
   font-size: 14px;
-  align-items: left;
+  margin-right: 0px; /* Optional: add some spacing between text and color pickers */
 }
 
 /* Style the color picker buttons */
@@ -468,7 +469,7 @@ footer {
 }
 
 /* Ensure color pickers only appear on mobile */
-@media (min-width: 768px) {
+@media (min-width: 700px) {
     .mobile-header-color-pickers {
         display: none;
     }
@@ -478,7 +479,7 @@ footer {
   .banner {
     width: 100%;
     position: relative;
-    height: 350px;
+    height: 300px;
     overflow: hidden;
     margin: 0 auto;
   }
@@ -549,7 +550,7 @@ footer {
   }
   
   .top img {
-    max-width: 90%;
+    max-width: 70%;
     height: auto;
   }
   
