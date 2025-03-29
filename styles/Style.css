@@ -463,17 +463,17 @@ footer {
 .mobile-header-color-pickers input {
     width: 35px;
     height: 35px;
-    border: 10px solid black; 
-    box-shadow: 0 0 0 5px white; /* White shadow as second border */
+    border: 2px solid black; 
+    box-shadow: 0 0 0 1px white; /* White shadow as second border */
     cursor: pointer;
     outline: none;
     background-color: white;
 }
 
 .top img {
-  max-width: 90%;
-  height: 100px;
-  max-height: 10%;
+  width: 90%;
+  max-width: 300px;
+  margin: 10px 0;
 }
 
 /* Ensure color pickers only appear on mobile */
