@@ -204,10 +204,40 @@
           const mobileNav = document.getElementById("mobileNav"); // Mobile nav element
       
           function setTopAndMiddleBackground(color) {
-              document.querySelector(".header-container").style.backgroundColor = color;
-              document.querySelector("section").style.backgroundColor = color;
-              localStorage.setItem("topMiddleBgColor", color);
+            // Change the background color of the header container
+            const headerContainer = document.querySelector(".header-container");
+            if (headerContainer) {
+              headerContainer.style.backgroundColor = color;
+            }
+            
+            // Change the background color of the main section
+            const section = document.querySelector("section");
+            if (section) {
+              section.style.backgroundColor = color;
+            }
+            
+            // Change the background color of the banner header (the slideshow area)
+            const bannerHeader = document.querySelector("header.banner");
+            if (bannerHeader) {
+              bannerHeader.style.backgroundColor = color;
+            }
+            
+            // For mobile view, update the mobile navigation background as well
+            if (window.innerWidth <= 768) {
+              const mobileNav = document.querySelector(".mobile-nav");
+              if (mobileNav) {
+                mobileNav.style.backgroundColor = color;
+              }
+              const mobileNavMenu = document.querySelector(".nav1");
+              if (mobileNavMenu) {
+                mobileNavMenu.style.backgroundColor = color;
+              }
+            }
+            
+            // Save the chosen color in localStorage
+            localStorage.setItem("topMiddleBgColor", color);
           }
+
       
           function setNavFooterColor(color) {
             document.querySelector("nav").style.backgroundColor = color;
