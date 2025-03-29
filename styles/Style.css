@@ -467,7 +467,7 @@ footer {
     box-shadow: 0 0 0 0.1vw black; /* White shadow as second border */
     cursor: pointer;
     outline: none;
-    background-color: #6F7378;
+    background-color: transparent;
 }
 
 .top img {
