@@ -69,7 +69,7 @@ body {
   Header & Logo
 --------------------------------------*/
 header {
-  background-color: #1B365D; /* Dark Colour */
+  background-color: grey; /* Dark Colour */
   color: white;
   font-family: 'Poppins', sans-serif;
 }
@@ -84,7 +84,7 @@ header img {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #1B365D; /* Adjust based on your theme */
+  background-color: grey; /* Adjust based on your theme */
   position: relative;
 }
 
@@ -463,10 +463,11 @@ footer {
 .mobile-header-color-pickers input {
     width: 35px;
     height: 35px;
-    border: white;
+    border: black;
+    box-shadow: 0 0 0 5px white; /* White shadow as second border */
     cursor: pointer;
     outline: none;
-    background-color: black;
+    background-color: transparent;
 }
 
 /* Ensure color pickers only appear on mobile */
@@ -552,6 +553,7 @@ footer {
   
   .top img {
     max-width: 90%;
+    height: 300px;
     max-height: 50%;
   }
   
