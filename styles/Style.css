@@ -474,8 +474,8 @@ footer {
   width: 90%;
   max-width: 300px;
   margin: 10px 0;
-  height: 200vw;
-  max-height: 40vw;
+  height: 100vw;
+  max-height: 100vw;
 }
 
 /* Ensure color pickers only appear on mobile */
