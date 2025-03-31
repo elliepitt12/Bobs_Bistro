@@ -16,6 +16,7 @@ head {
 body {
   background-color: #802424;
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /*--------------------------------------

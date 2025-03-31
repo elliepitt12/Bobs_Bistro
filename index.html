@@ -194,6 +194,47 @@
       });
     </script>
 
+
+
+    <!-- text colour automatically changes-->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    function updateTextColor(bgColor) {
+        const textElements = document.querySelectorAll("body, h1, h2, h3, p, a");
+        const brightness = getBrightness(bgColor);
+
+        textElements.forEach(el => {
+            el.style.color = brightness < 128 ? "white" : "black";
+        });
+    }
+
+    function getBrightness(hexColor) {
+        let r = parseInt(hexColor.substr(1, 2), 16);
+        let g = parseInt(hexColor.substr(3, 2), 16);
+        let b = parseInt(hexColor.substr(5, 2), 16);
+        return (r * 0.299 + g * 0.587 + b * 0.114);
+    }
+
+    // Apply text color whenever background color changes
+    const savedTopMiddleBgColor = localStorage.getItem("topMiddleBgColor");
+    if (savedTopMiddleBgColor) {
+        updateTextColor(savedTopMiddleBgColor);
+    }
+
+    // Listen for background color changes
+    const colorPickers = document.querySelectorAll("#colorPicker, #mobileColorPicker");
+    colorPickers.forEach(picker => {
+        picker.addEventListener("input", function () {
+            updateTextColor(picker.value);
+        });
+    });
+});
+    </script>
+
+
+
+
+
     <!-- Background Color Change -->
      <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -297,10 +338,7 @@
         <a href="https://www.youtube.com"><img src="./images/youtube1.png" alt="Youtube logo"></a>
       </div>
       <div class="Copyright">
-        Privacy Policy
-      </div>
-      <div class="Copyright2">
-        ©Bob's Bistro Information Copyright 2025
+        <p>Privacy Policy </p> <p>©Bob's Bistro Information Copyright 2025</p>
       </div>
     </footer>
   </body>
