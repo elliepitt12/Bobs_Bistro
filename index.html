@@ -196,7 +196,7 @@
 
     <!-- Background Color Change -->
      <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     const colorPicker = document.getElementById("colorPicker");
     const mobileColorPicker = document.getElementById("mobileColorPicker");
     const navFooterColorPicker = document.getElementById("navFooterColorPicker");
@@ -207,6 +207,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const headerContainer = document.querySelector(".header-container");
         if (headerContainer) headerContainer.style.backgroundColor = color;
+
+        const header = document.querySelector("head");
+        if (header) header.style.backgroundColor = color;
+
+        const bodyContainer = document.querySelector("body");
+        if (bodyContainer) bodyContainer.style.backgroundColor = color;
 
         const section = document.querySelector("section");
         if (section) section.style.backgroundColor = color;
