@@ -9,6 +9,10 @@ p {
   font-family: 'Poppins', sans-serif;
 }
 
+head {
+  background: rgba(255, 255, 255, 0.0);
+}
+
 body {
   background-color: #802424;
   color: white;
@@ -22,12 +26,17 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.0);
   padding: 10px;
   border-radius: 10px;
   align-items: center;
   gap: 10px;
 }
+
+.mobile-only {
+  background: rgba(255, 255, 255, 0.0);
+}
+
 
 .mobile-header-color-pickers {
   display: none;
@@ -388,7 +397,7 @@ footer {
     height: auto;
     position: relative;
     z-index: 9998;
-    background-color: rgba(255, 255, 255, 0.0);
+    background-color: inherit;
   
   }
   
@@ -429,11 +438,10 @@ footer {
 }
 .mobile-nav {
   display: block;
-  background-color: inherit;
 }
 
 .mobile-nav, .nav1 {
-  background-color: inherit;
+  background:#AD3030;
 }
 
 .header-container {
