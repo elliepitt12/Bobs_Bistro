@@ -370,7 +370,6 @@ footer {
     margin: 0;
     display: none;
     flex-direction: column;
-    background-color: #AD3030;
     width: 100%;
     text-align: center;
   }
@@ -389,7 +388,7 @@ footer {
     height: auto;
     position: relative;
     z-index: 9998;
-    background-color: #AD3030;
+    background-color: rgba(255, 255, 255, 0.0);
   
   }
   

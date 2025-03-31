@@ -195,96 +195,85 @@
     </script>
 
     <!-- Background Color Change -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const colorPicker = document.getElementById("colorPicker"); 
-          const mobileColorPicker = document.getElementById("mobileColorPicker");
-          const navFooterColorPicker = document.getElementById("navFooterColorPicker");
-          const mobileNavFooterColorPicker = document.getElementById("mobileNavFooterColorPicker");
-          const mobileNav = document.getElementById("mobileNav"); // Mobile nav element
-      
-          function setTopAndMiddleBackground(color) {
-            // Change the background color of the header container
-            const headerContainer = document.querySelector(".header-container");
-            if (headerContainer) {
-              headerContainer.style.backgroundColor = color;
-            }
-            
-            // Change the background color of the main section
-            const section = document.querySelector("section");
-            if (section) {
-              section.style.backgroundColor = color;
-            }
-            
-            // Change the background color of the banner header (the slideshow area)
-            const bannerHeader = document.querySelector("header.banner");
-            if (bannerHeader) {
-              bannerHeader.style.backgroundColor = color;
-            }
-            
-            // For mobile view, update the mobile navigation background as well
-            if (window.innerWidth <= 768) {
-              const mobileNav = document.querySelector(".mobile-nav");
-              if (mobileNav) {
-                mobileNav.style.backgroundColor = color;
-              }
-              const mobileNavMenu = document.querySelector(".nav1");
-              if (mobileNavMenu) {
-                mobileNavMenu.style.backgroundColor = color;
-              }
-            }
-            
-            // Save the chosen color in localStorage
-            localStorage.setItem("topMiddleBgColor", color);
-          }
+     <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const colorPicker = document.getElementById("colorPicker");
+    const mobileColorPicker = document.getElementById("mobileColorPicker");
+    const navFooterColorPicker = document.getElementById("navFooterColorPicker");
+    const mobileNavFooterColorPicker = document.getElementById("mobileNavFooterColorPicker");
 
-      
-          function setNavFooterColor(color) {
-            document.querySelector("nav").style.backgroundColor = color;
-            document.querySelector("footer").style.backgroundColor = color;
+    function setTopAndMiddleBackground(color) {
+        console.log("Setting top/middle background color:", color); // Debugging log
 
-    // Change mobile nav & hamburger menu background in mobile view
-            if (window.innerWidth <= 768) {
-            document.querySelector(".mobile-nav").style.backgroundColor = color; 
-             document.querySelector(".nav1").style.backgroundColor = color; // Ensure dropdown updates
-             }
+        const headerContainer = document.querySelector(".header-container");
+        if (headerContainer) headerContainer.style.backgroundColor = color;
 
-    localStorage.setItem("navFooterColor", color);
-}
-      
-          function syncPickers(mainPicker, mobilePicker, callback) {
-              if (mainPicker && mobilePicker) {
-                  mainPicker.addEventListener("input", function () {
-                      callback(mainPicker.value);
-                      mobilePicker.value = mainPicker.value;
-                  });
-      
-                  mobilePicker.addEventListener("input", function () {
-                      callback(mobilePicker.value);
-                      mainPicker.value = mobilePicker.value;
-                  });
-              }
-          }
-      
-          // Load saved colors
-          const savedTopMiddleBgColor = localStorage.getItem("topMiddleBgColor");
-          if (savedTopMiddleBgColor) {
-              setTopAndMiddleBackground(savedTopMiddleBgColor);
-              colorPicker.value = savedTopMiddleBgColor;
-              mobileColorPicker.value = savedTopMiddleBgColor;
-          }
-      
-          const savedNavFooterColor = localStorage.getItem("navFooterColor");
-          if (savedNavFooterColor) {
-              setNavFooterColor(savedNavFooterColor);
-              navFooterColorPicker.value = savedNavFooterColor;
-              mobileNavFooterColorPicker.value = savedNavFooterColor;
-          }
-      
-          syncPickers(colorPicker, mobileColorPicker, setTopAndMiddleBackground);
-          syncPickers(navFooterColorPicker, mobileNavFooterColorPicker, setNavFooterColor);
-      });
-      </script>
+        const section = document.querySelector("section");
+        if (section) section.style.backgroundColor = color;
+
+        const bannerHeader = document.querySelector("header.banner");
+        if (bannerHeader) bannerHeader.style.backgroundColor = color;
+
+        // 🚨 STOP changing mobile navigation menu color here 🚨
+        
+        localStorage.setItem("topMiddleBgColor", color);
+    }
+
+    function setNavFooterColor(color) {
+        console.log("Setting nav/footer color:", color); // Debugging log
+
+        const nav = document.querySelector("nav");
+        if (nav) nav.style.backgroundColor = color;
+
+        const footer = document.querySelector("footer");
+        if (footer) footer.style.backgroundColor = color;
+
+        // ✅ Keep mobile navigation updates here
+        const mobileNav = document.querySelector(".mobile-nav");
+        if (mobileNav) mobileNav.style.backgroundColor = color;
+
+        const mobileNavMenu = document.querySelector(".nav1");
+        if (mobileNavMenu) mobileNavMenu.style.backgroundColor = color;
+
+        localStorage.setItem("navFooterColor", color);
+    }
+
+    function syncPickers(mainPicker, mobilePicker, callback) {
+        if (mainPicker && mobilePicker) {
+            mainPicker.addEventListener("input", function () {
+                callback(mainPicker.value);
+                mobilePicker.value = mainPicker.value;
+            });
+
+            mobilePicker.addEventListener("input", function () {
+                callback(mobilePicker.value);
+                mainPicker.value = mobilePicker.value;
+            });
+        }
+    }
+
+    // Load saved colors on page load
+    const savedTopMiddleBgColor = localStorage.getItem("topMiddleBgColor");
+    if (savedTopMiddleBgColor) {
+        setTopAndMiddleBackground(savedTopMiddleBgColor);
+        if (colorPicker) colorPicker.value = savedTopMiddleBgColor;
+        if (mobileColorPicker) mobileColorPicker.value = savedTopMiddleBgColor;
+    }
+
+    const savedNavFooterColor = localStorage.getItem("navFooterColor");
+    if (savedNavFooterColor) {
+        setNavFooterColor(savedNavFooterColor);
+        if (navFooterColorPicker) navFooterColorPicker.value = savedNavFooterColor;
+        if (mobileNavFooterColorPicker) mobileNavFooterColorPicker.value = savedNavFooterColor;
+    }
+
+        syncPickers(colorPicker, mobileColorPicker, setTopAndMiddleBackground);
+        syncPickers(navFooterColorPicker, mobileNavFooterColorPicker, setNavFooterColor);
+});
+
+  </script>
+  
+
       
       
       
