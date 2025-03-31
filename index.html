@@ -198,42 +198,57 @@
 
     <!-- text colour automatically changes-->
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    function updateTextColor(bgColor) {
-        const textElements = document.querySelectorAll("body, h1, h2, h3, p, a");
-        const brightness = getBrightness(bgColor);
-
-        textElements.forEach(el => {
-            el.style.color = brightness < 128 ? "white" : "black";
-        });
-    }
-
-    function getBrightness(hexColor) {
-        let r = parseInt(hexColor.substr(1, 2), 16);
-        let g = parseInt(hexColor.substr(3, 2), 16);
-        let b = parseInt(hexColor.substr(5, 2), 16);
-        return (r * 0.299 + g * 0.587 + b * 0.114);
-    }
-
-    // Apply text color whenever background color changes
-    const savedTopMiddleBgColor = localStorage.getItem("topMiddleBgColor");
-    if (savedTopMiddleBgColor) {
-        updateTextColor(savedTopMiddleBgColor);
-    }
-
-    // Listen for background color changes
-    const colorPickers = document.querySelectorAll("#colorPicker, #mobileColorPicker");
-    colorPickers.forEach(picker => {
-        picker.addEventListener("input", function () {
-            updateTextColor(picker.value);
-        });
-    });
-});
-    </script>
-
-
-
-
+      document.addEventListener("DOMContentLoaded", function () {
+          function updateTextColor(bgColor, targetElements) {
+              const brightness = getBrightness(bgColor);
+              const textColor = brightness < 128 ? "white" : "black";
+      
+              targetElements.forEach(el => {
+                  el.style.color = textColor;
+              });
+          }
+      
+          function getBrightness(hexColor) {
+              let r = parseInt(hexColor.substr(1, 2), 16);
+              let g = parseInt(hexColor.substr(3, 2), 16);
+              let b = parseInt(hexColor.substr(5, 2), 16);
+              return (r * 0.299 + g * 0.587 + b * 0.114);
+          }
+      
+          function handleTopMiddleChange(event) {
+              const bgColor = event.target.value;
+              updateTextColor(bgColor, document.querySelectorAll("section, h1, h2, h3, p"));
+          }
+      
+          function handleNavFooterChange(event) {
+              const bgColor = event.target.value;
+              updateTextColor(bgColor, document.querySelectorAll("nav, nav a, footer, footer p, .mobile-nav, .nav1, .mobile-nav a"));
+          }
+      
+          // Get color pickers
+          const topMiddlePickers = document.querySelectorAll("#colorPicker, #mobileColorPicker");
+          const navFooterPickers = document.querySelectorAll("#navFooterColorPicker, #mobileNavFooterColorPicker");
+      
+          // Listen for changes in both sets of color pickers
+          topMiddlePickers.forEach(picker => picker.addEventListener("input", handleTopMiddleChange));
+          navFooterPickers.forEach(picker => picker.addEventListener("input", handleNavFooterChange));
+      
+          // Apply saved colors on page load
+          const savedTopMiddleBgColor = localStorage.getItem("topMiddleBgColor");
+          if (savedTopMiddleBgColor) {
+              handleTopMiddleChange({ target: { value: savedTopMiddleBgColor } });
+          }
+      
+          const savedNavFooterColor = localStorage.getItem("navFooterColor");
+          if (savedNavFooterColor) {
+              handleNavFooterChange({ target: { value: savedNavFooterColor } });
+          }
+      });
+      </script>
+      
+      
+      
+    
 
     <!-- Background Color Change -->
      <script>
@@ -338,7 +353,10 @@
         <a href="https://www.youtube.com"><img src="./images/youtube1.png" alt="Youtube logo"></a>
       </div>
       <div class="Copyright">
-        <p>Privacy Policy </p> <p>©Bob's Bistro Information Copyright 2025</p>
+        <p>Privacy Policy</p>
+      </div>
+      <div class="Copyright2">
+        <p>©Bob's Bistro Information Copyright 2025</p>
       </div>
     </footer>
   </body>
