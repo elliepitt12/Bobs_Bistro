@@ -3,10 +3,21 @@
 --------------------------------------*/
 body,
 h1,
+a,
 p {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: white;
 }
 
 head {
@@ -324,6 +335,45 @@ label {
 --------------------------------------*/
 .hover-img {
   transition: opacity 0.5s ease-in-out;
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+}
+
+.cookie-banner p {
+  margin: 0;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.cookie-banner a {
+  color: #ffa07a;
+  text-decoration: none;
+}
+
+.cookie-btn {
+  background-color: #ffa07a;
+  border: none;
+  padding: 10px 20px;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.cookie-btn:hover {
+  background-color: #ffa07a;
 }
 
 /*--------------------------------------

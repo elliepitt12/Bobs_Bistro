@@ -348,7 +348,34 @@
       
       
       
-
+      <!-- Cookie Consent Banner -->
+      <div id="cookie-banner" class="cookie-banner">
+        <p>We use cookies to enhance your browsing experience. By continuing to use this site, you consent to our use of cookies. 
+          <a href="privacy-policy.html" class="cookie-link">Learn more</a></p><button id="accept-cookies" class="cookie-btn">Accept</button>
+      </div>
+  
+      <!-- Your other scripts (if any) -->
+      
+      <!-- JavaScript for Cookie Banner -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const cookieBanner = document.getElementById("cookie-banner");
+          const acceptButton = document.getElementById("accept-cookies");
+  
+          // If the user has already accepted, hide the banner
+          if (localStorage.getItem("cookiesAccepted")) {
+            cookieBanner.style.display = "none";
+          } else {
+            cookieBanner.style.display = "block"; // Show the banner
+          }
+  
+          // When the user clicks "Accept"
+          acceptButton.addEventListener("click", function () {
+            localStorage.setItem("cookiesAccepted", true); // Save their preference
+            cookieBanner.style.display = "none"; // Hide the banner
+          });
+        });
+      </script>
       
 
     <!-- Footer -->
@@ -360,7 +387,7 @@
         <a href="https://www.youtube.com"><img src="./images/youtube1.png" alt="Youtube logo"></a>
       </div>
       <div class="Copyright">
-        <p>Privacy Policy</p>
+        <a href="privacy-policy.html"><p>Privacy Policy</p></a>
       </div>
       <div class="Copyright2">
         <p>©Bob's Bistro Information Copyright 2025</p>
