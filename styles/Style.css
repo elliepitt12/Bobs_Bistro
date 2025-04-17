@@ -433,27 +433,31 @@ footer {
     text-align: center;
   }
   
+  /* Ensure consistent spacing for each link */
+  nav ul li {
+    padding: 10px 0; /* Adjust vertical padding */
+    margin: 0; /* Remove any margin */
+  }
   
+  /* Mobile menu links */
   nav ul li a {
     display: block;
     color: white;
     text-decoration: none;
+    font-size: 1.2rem; /* Adjust font size */
   }
   
+  /* Navigation container styling */
   nav.nav1 {
     height: auto;
     position: relative;
     z-index: 9998;
     background-color: inherit;
-  
   }
   
+  /* Display menu when the checkbox is checked */
   #menu:checked ~ nav ul {
     display: flex;
-  }
-  
-  input#menu:checked + label + nav.nav1 ul {
-    display: block;
   }
   
   /* Hamburger Button */
@@ -475,17 +479,19 @@ footer {
     color: white;
     margin-right: 10px;
   }
-
+  
+  /* Mobile navigation (hidden on desktop) */
   .desktop-only {
     display: none;
-}
-
-.desktop-nav {
-  display: none;
-}
-.mobile-nav {
-  display: block;
-}
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-nav {
+    display: block;
+  }
 
 .mobile-nav, .nav1 {
   background:#AD3030;
