@@ -69,7 +69,6 @@ body {
   background-color: transparent;
 }
 
-/* Ensure the text is visible */
 .color-label {
   color: white;
   font-size: 16px;
@@ -105,7 +104,7 @@ header img {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #802424; /* Adjust based on your theme */
+  background-color: #802424;
   position: relative;
 }
 
@@ -136,16 +135,22 @@ header img {
 .prev,
 .next {
   position: absolute;
-  top: 50%;
-  transform: translateY(100%);
+  top: 70%;
+  transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  color: black;
-  padding: 15px;
-  cursor: pointer;
+  color: white;
+  width: 40px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 30px;
-  border-radius: 25px;
+  border-radius: 15px;
+  cursor: pointer;
   user-select: none;
   z-index: 100;
+  transition: background-color 0.3s, color 0.3s;
+  box-sizing: border-box;
 }
 
 .prev {
@@ -158,7 +163,9 @@ header img {
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black; 
+  transform: translateY(-50%);
 }
 
 .fade {
@@ -347,7 +354,7 @@ label {
   padding: 15px;
   text-align: center;
   font-size: 16px;
-  display: none; /* Initially hidden */
+  display: none;
   z-index: 1000;
 }
 
@@ -433,10 +440,10 @@ footer {
     text-align: center;
   }
   
-  /* Ensure consistent spacing for each link */
+
   nav ul li {
-    padding: 10px 0; /* Adjust vertical padding */
-    margin: 0; /* Remove any margin */
+    padding: 10px 0;
+    margin: 0;
   }
   
   /* Mobile menu links */
@@ -444,7 +451,7 @@ footer {
     display: block;
     color: white;
     text-decoration: none;
-    font-size: 1.2rem; /* Adjust font size */
+    font-size: 1.2rem;
   }
   
   /* Navigation container styling */
@@ -455,7 +462,7 @@ footer {
     background-color: inherit;
   }
   
-  /* Display menu when the checkbox is checked */
+
   #menu:checked ~ nav ul {
     display: flex;
   }
@@ -506,20 +513,19 @@ footer {
     position: relative;
 }
 
-
 .mobile-header-color-pickers {
-  display: flex; /* Use flexbox to align items */
-  flex-direction: column; /* Stack items (text and color pickers) vertically */
-  align-items: center; /* Align items vertically in the center */
-  justify-content: flex-start; /* Align items to the left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   flex-wrap: wrap;
 }
 
 .mobile-header-color-pickers h3 {
-  white-space: nowrap; /* Keep text in one line */
+  white-space: nowrap;
   font-size: 14px;
-  margin-right: 0px; /* Optional: add some spacing between text and color pickers */
+  margin-right: 0px;
 }
 
 /* Style the color picker buttons */
@@ -527,7 +533,7 @@ footer {
     width: 35px;
     height: 35px;
     border: 0.2vw solid white; 
-    box-shadow: 0 0 0 0.1vw black; /* White shadow as second border */
+    box-shadow: 0 0 0 0.1vw black;
     cursor: pointer;
     outline: none;
     background-color: transparent;
@@ -541,108 +547,107 @@ footer {
   max-height: 300vw;
 }
 
-/* Ensure color pickers only appear on mobile */
 @media (min-width: 700px) {
     .mobile-header-color-pickers {
         display: none;
     }
 }
-  
-  /* Banner on Mobile */
-  .banner {
-    width: 100%;
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-  
-  .banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-  }
-  
-  /* Slideshow Buttons on Mobile */
-  .prev,
-  .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: black;
-    padding: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000;
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
-  .dots {
-    position: absolute;
-    bottom: 1px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-  }
-  
-  .dots span {
-    background-color: white;
-    border-radius: 50%;
-    display: inline-block;
-    height: 25px;
-    width: 25px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dots span.active {
-    background-color: grey;
-  }
-  
-  /* Mobile Top Section */
-  .top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 10px auto;
-    padding: 10px;
-  }
-  
-  .text-content {
-    max-width: 90%;
-    padding: 1px;
-    font-size: 1rem;
-  }
-  
-  
-  .special1 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .special1 img {
-    width: 90%;
-    max-width: 300px;
-    margin: 10px 0;
-  }
-  
-  .Social {
-    text-align: center;
-    padding-left: 0;
-    padding-top: 1%;
-  }
-  
-  .Social img {
-    display: inline-block;
-    margin: 5px;
-  }
+
+/*--------------------------------------
+  Mobile Banner
+--------------------------------------*/
+.banner {
+  width: 100%;
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Slideshow Buttons on Mobile */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: black;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.dots span {
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dots span.active {
+  background-color: grey;
+}
+
+.top {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.text-content {
+  max-width: 90%;
+  padding: 1px;
+  font-size: 1rem;
+}
+
+.special1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.special1 img {
+  width: 90%;
+  max-width: 300px;
+  margin: 10px 0;
+}
+
+.Social {
+  text-align: center;
+  padding-left: 0;
+  padding-top: 1%;
+}
+
+.Social img {
+  display: inline-block;
+  margin: 5px;
+}
 }

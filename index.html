@@ -9,65 +9,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&family=Open+Sans:wght@400;600&family=Roboto:wght@400;600&family=Lato:wght@400;600&family=Playfair+Display:wght@400;600&family=Merriweather:wght@400;600&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZP6H74CNB0"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZP6H74CNB0');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-ZP6H74CNB0');
     </script>
   </head>
   <body>
+
     <!-- Logo Section -->
-  <div class="header-container">
-    <div class="logo-container">
-      <a href="./index.html">
-        <img src="./images/logo_Black.png" alt="Website logo">
-      </a>
-    </div>
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="./index.html">
+          <img src="./images/logo_Black.png" alt="Website logo">
+        </a>
+      </div>
 
       <!-- Color Picker Section -->
       <div class="color-picker-container desktop-only">
         <h3> Primary Theme Colour: </h3>
         <input type="color" id="colorPicker">
-    
         <h3> Secondary Theme Colour: </h3>
         <input type="color" id="navFooterColorPicker">
-    </div>
-    
-    <!-- Mobile Color Pickers (Visible only on Mobile) -->
-    <div class="mobile-header-color-pickers">
-       <h3> Pick colours:</h3>
+      </div>
+
+      <!-- Mobile Color Pickers (Visible only on Mobile) -->
+      <div class="mobile-header-color-pickers">
+        <h3> Pick colours:</h3>
         <input type="color" id="mobileColorPicker">
         <input type="color" id="mobileNavFooterColorPicker">
-    </div>
+      </div>
     </div>
 
     <!-- Collapsible Navigation Menu -->
     <nav class="nav1 desktop-nav">
       <ul>
+        <li><a href="./index.html">Menu</a></li>
+        <li><a href="./index.html">About Us</a></li>
+        <li><a href="./index.html">Contact</a></li>
+        <li><a href="./index.html">Gallery</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Mobile Hamburger Menu (Visible only on Mobile) -->
+    <div class="mobile-nav">
+      <input type="checkbox" id="menu">
+      <label for="menu"></label>
+      <nav class="nav1">
+        <ul>
           <li><a href="./index.html">Menu</a></li>
           <li><a href="./index.html">About Us</a></li>
           <li><a href="./index.html">Contact</a></li>
           <li><a href="./index.html">Gallery</a></li>
-      </ul>
-  </nav>
-  
-  <!-- Mobile Hamburger Menu (Visible only on Mobile) -->
-  <div class="mobile-nav">
-      <input type="checkbox" id="menu">
-      <label for="menu"></label>
-      <nav class="nav1">
-          <ul>
-              <li><a href="./index.html">Menu</a></li>
-              <li><a href="./index.html">About Us</a></li>
-              <li><a href="./index.html">Contact</a></li>
-              <li><a href="./index.html">Gallery</a></li>
-          </ul>
+        </ul>
       </nav>
-  </div>
+    </div>
 
     <!-- Main Section -->
     <section>
-      <!-- Banner / Slideshow -->
+      <!-- Banner -->
       <header class="banner">
         <div class="banner container">
           <div class="slide fade">
@@ -161,8 +161,8 @@
           <h1>Welcome to Bob's Bistro!</h1>
           <h2>
             Here at Bob's Bistro there is more than just meals being made. We create unforgettable experiences around our tables. Taste our crafted menu full of fresh ingredients sourced locally, with flavors that have been brought together from various cuisines around the world. 
-            <p> </p>  
-            Whether you have stopped by for a casual lunch, a romantic dinner, or celebrating anything with your family, we truly feel honored that you are with us. Come in, sit back, and relax with truely special food at low prices!
+            <p></p>  
+            Whether you have stopped by for a casual lunch, a romantic dinner, or celebrating anything with your family, we truly feel honored that you are with us. Come in, sit back, and relax with truly special food at low prices!
           </h2>
         </div>
         <img src="./images/restaurant2.png" alt="Restaurant Image">
@@ -201,72 +201,63 @@
       });
     </script>
 
-
-
-    <!-- text colour automatically changes-->
+    <!-- Text Colour Change -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-          function updateTextColor(bgColor, targetElements) {
-              const brightness = getBrightness(bgColor);
-              const textColor = brightness < 128 ? "white" : "black";
-      
-              targetElements.forEach(el => {
-                  el.style.color = textColor;
-              });
-          }
-      
-          function getBrightness(hexColor) {
-              let r = parseInt(hexColor.substr(1, 2), 16);
-              let g = parseInt(hexColor.substr(3, 2), 16);
-              let b = parseInt(hexColor.substr(5, 2), 16);
-              return (r * 0.299 + g * 0.587 + b * 0.114);
-          }
-      
-          function handleTopMiddleChange(event) {
-              const bgColor = event.target.value;
-              updateTextColor(bgColor, document.querySelectorAll("section, h1, h2, h3, p"));
-          }
-      
-          function handleNavFooterChange(event) {
-              const bgColor = event.target.value;
-              updateTextColor(bgColor, document.querySelectorAll("nav, nav a, footer, footer p, .mobile-nav, .nav1, .mobile-nav a"));
-          }
-      
-          // Get color pickers
-          const topMiddlePickers = document.querySelectorAll("#colorPicker, #mobileColorPicker");
-          const navFooterPickers = document.querySelectorAll("#navFooterColorPicker, #mobileNavFooterColorPicker");
-      
-          // Listen for changes in both sets of color pickers
-          topMiddlePickers.forEach(picker => picker.addEventListener("input", handleTopMiddleChange));
-          navFooterPickers.forEach(picker => picker.addEventListener("input", handleNavFooterChange));
-      
-          // Apply saved colors on page load
-          const savedTopMiddleBgColor = localStorage.getItem("topMiddleBgColor");
-          if (savedTopMiddleBgColor) {
-              handleTopMiddleChange({ target: { value: savedTopMiddleBgColor } });
-          }
-      
-          const savedNavFooterColor = localStorage.getItem("navFooterColor");
-          if (savedNavFooterColor) {
-              handleNavFooterChange({ target: { value: savedNavFooterColor } });
-          }
-      });
-      </script>
-      
-      
-      
-    
+        function updateTextColor(bgColor, targetElements) {
+          const brightness = getBrightness(bgColor);
+          const textColor = brightness < 128 ? "white" : "black";
 
-    <!-- Background Color Change -->
-     <script>
-    document.addEventListener("DOMContentLoaded", function () {
+          targetElements.forEach(el => {
+            el.style.color = textColor;
+          });
+        }
+
+        function getBrightness(hexColor) {
+          let r = parseInt(hexColor.substr(1, 2), 16);
+          let g = parseInt(hexColor.substr(3, 2), 16);
+          let b = parseInt(hexColor.substr(5, 2), 16);
+          return (r * 0.299 + g * 0.587 + b * 0.114);
+        }
+
+        function handleTopMiddleChange(event) {
+          const bgColor = event.target.value;
+          updateTextColor(bgColor, document.querySelectorAll("section, h1, h2, h3, p"));
+        }
+
+        function handleNavFooterChange(event) {
+          const bgColor = event.target.value;
+          updateTextColor(bgColor, document.querySelectorAll("nav, nav a, footer, footer p, .mobile-nav, .nav1, .mobile-nav a"));
+        }
+        
+        const topMiddlePickers = document.querySelectorAll("#colorPicker, #mobileColorPicker");
+        const navFooterPickers = document.querySelectorAll("#navFooterColorPicker, #mobileNavFooterColorPicker");
+
+        topMiddlePickers.forEach(picker => picker.addEventListener("input", handleTopMiddleChange));
+        navFooterPickers.forEach(picker => picker.addEventListener("input", handleNavFooterChange));
+
+        const savedTopMiddleBgColor = localStorage.getItem("topMiddleBgColor");
+        if (savedTopMiddleBgColor) {
+          handleTopMiddleChange({ target: { value: savedTopMiddleBgColor } });
+        }
+
+        const savedNavFooterColor = localStorage.getItem("navFooterColor");
+        if (savedNavFooterColor) {
+          handleNavFooterChange({ target: { value: savedNavFooterColor } });
+        }
+      });
+    </script>
+
+<!-- Background Color Change -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
     const colorPicker = document.getElementById("colorPicker");
     const mobileColorPicker = document.getElementById("mobileColorPicker");
     const navFooterColorPicker = document.getElementById("navFooterColorPicker");
     const mobileNavFooterColorPicker = document.getElementById("mobileNavFooterColorPicker");
 
     function setTopAndMiddleBackground(color) {
-        console.log("Setting top/middle background color:", color); // Debugging log
+        console.log("Setting top/middle background color:", color);
 
         const headerContainer = document.querySelector(".header-container");
         if (headerContainer) headerContainer.style.backgroundColor = color;
@@ -282,14 +273,12 @@
 
         const bannerHeader = document.querySelector("header.banner");
         if (bannerHeader) bannerHeader.style.backgroundColor = color;
-
-        // 🚨 STOP changing mobile navigation menu color here 🚨
         
         localStorage.setItem("topMiddleBgColor", color);
     }
 
     function setNavFooterColor(color) {
-        console.log("Setting nav/footer color:", color); // Debugging log
+        console.log("Setting nav/footer color:", color);
 
         const nav = document.querySelector("nav");
         if (nav) nav.style.backgroundColor = color;
@@ -297,7 +286,6 @@
         const footer = document.querySelector("footer");
         if (footer) footer.style.backgroundColor = color;
 
-        // ✅ Keep mobile navigation updates here
         const mobileNav = document.querySelector(".mobile-nav");
         if (mobileNav) mobileNav.style.backgroundColor = color;
 
@@ -336,62 +324,54 @@
         if (mobileNavFooterColorPicker) mobileNavFooterColorPicker.value = savedNavFooterColor;
     }
 
-        syncPickers(colorPicker, mobileColorPicker, setTopAndMiddleBackground);
-        syncPickers(navFooterColorPicker, mobileNavFooterColorPicker, setNavFooterColor);
-});
+    syncPickers(colorPicker, mobileColorPicker, setTopAndMiddleBackground);
+    syncPickers(navFooterColorPicker, mobileNavFooterColorPicker, setNavFooterColor);
+  });
+</script>
+      
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <p>We use cookies to enhance your browsing experience. By continuing to use this site, you consent to our use of cookies. 
+    <a href="privacy-policy.html" class="cookie-link">Learn more</a></p>
+  <button id="accept-cookies" class="cookie-btn">Accept</button>
+</div>
+  
+<!-- JavaScript for Cookie Banner -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptButton = document.getElementById("accept-cookies");
 
-  </script>
-  
+    // If the user has already accepted, hide the banner
+    if (localStorage.getItem("cookiesAccepted")) {
+      cookieBanner.style.display = "none";
+    } else {
+      cookieBanner.style.display = "block"; // Show the banner
+    }
 
-      
-      
-      
-      
-      
-      <!-- Cookie Consent Banner -->
-      <div id="cookie-banner" class="cookie-banner">
-        <p>We use cookies to enhance your browsing experience. By continuing to use this site, you consent to our use of cookies. 
-          <a href="privacy-policy.html" class="cookie-link">Learn more</a></p><button id="accept-cookies" class="cookie-btn">Accept</button>
-      </div>
-  
-      <!-- Your other scripts (if any) -->
-      
-      <!-- JavaScript for Cookie Banner -->
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const cookieBanner = document.getElementById("cookie-banner");
-          const acceptButton = document.getElementById("accept-cookies");
-  
-          // If the user has already accepted, hide the banner
-          if (localStorage.getItem("cookiesAccepted")) {
-            cookieBanner.style.display = "none";
-          } else {
-            cookieBanner.style.display = "block"; // Show the banner
-          }
-  
-          // When the user clicks "Accept"
-          acceptButton.addEventListener("click", function () {
-            localStorage.setItem("cookiesAccepted", true); // Save their preference
-            cookieBanner.style.display = "none"; // Hide the banner
-          });
-        });
-      </script>
-      
+    // When the user clicks "Accept"
+    acceptButton.addEventListener("click", function () {
+      localStorage.setItem("cookiesAccepted", true); // Save their preference
+      cookieBanner.style.display = "none"; // Hide the banner
+    });
+  });
+</script>
 
-    <!-- Footer -->
-    <footer>
-      <div class="Social">
-        <a href="https://www.facebook.com"><img src="./images/facebook1.png" alt="Facebook logo"></a>
-        <a href="https://www.twitter.com"><img src="./images/twitter1.png" alt="Twitter logo"></a>
-        <a href="https://www.instagram.com"><img src="./images/instagram1.png" alt="Instagram logo"></a>
-        <a href="https://www.youtube.com"><img src="./images/youtube1.png" alt="Youtube logo"></a>
-      </div>
-      <div class="Copyright">
-        <a href="privacy-policy.html"><p>Privacy Policy</p></a>
-      </div>
-      <div class="Copyright2">
-        <p>©Bob's Bistro Information Copyright 2025</p>
-      </div>
-    </footer>
-  </body>
+<!-- Footer -->
+<footer>
+  <div class="Social">
+    <a href="https://www.facebook.com"><img src="./images/facebook1.png" alt="Facebook logo"></a>
+    <a href="https://www.twitter.com"><img src="./images/twitter1.png" alt="Twitter logo"></a>
+    <a href="https://www.instagram.com"><img src="./images/instagram1.png" alt="Instagram logo"></a>
+    <a href="https://www.youtube.com"><img src="./images/youtube1.png" alt="Youtube logo"></a>
+  </div>
+  <div class="Copyright">
+    <a href="privacy-policy.html"><p>Privacy Policy</p></a>
+  </div>
+  <div class="Copyright2">
+    <p>©Bob's Bistro Information Copyright 2025</p>
+  </div>
+</footer>
+</body>
 </html>
+
